@@ -41,6 +41,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install hub
     brew install reattach-to-user-namespace
     brew install highlight
+    brew install svn
 
     # Node stuff
     brew install nodenv
@@ -49,10 +50,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     # convenience plugin for nodenv
     git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
     nodenv package-hooks install --all
-    brew install yarn --without-node
+    brew install yarn --ignore-dependencies
 
-    brew install chruby
-    brew install ruby-install
+    brew install ruby
     brew install m-cli
     brew install git-flow
     brew install grep
