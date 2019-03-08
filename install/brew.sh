@@ -14,16 +14,12 @@ brew tap caskroom/versions
 # apps
 brew cask install alfred
 brew cask install appcleaner
-brew cask install carbon-copy-cloner
-brew cask install daisydisk
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install hammerspoon
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install skype
-brew cask install transmission
-brew cask install vlc
 
 echo ""
 echo "Install Extra Dev Stuff? (y/n)"
@@ -64,7 +60,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew cask install dash
     brew cask install duet
     brew cask install firefox
-    brew cask install visual-studio-code-insiders
+    brew cask install visual-studio-code
     brew cask install slack
     brew cask install docker
 fi
