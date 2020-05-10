@@ -103,17 +103,11 @@
 [branch]
     # set up 'git pull' to rebase instead of merge
     autosetuprebase = always
-[diff]
-    renames = copies
-    mnemonicprefix = true
-    tool = default-difftool
-[difftool]
-    prompt = false
 [apply]
     # do not warn about missing whitespace at EOF
     whitespace = nowarn
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
     pager = less -FXRS -x2
 	editor = code --wait
 [rerere]
@@ -125,12 +119,23 @@
     lineNumber = true
 [credential]
 	helper = store
-[difftool "default-difftool"]
-	cmd = code --wait --diff $LOCAL $REMOTE
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/work/.stCommitMsg

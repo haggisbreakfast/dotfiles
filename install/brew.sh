@@ -1,66 +1,50 @@
 #!/bin/sh
 # give me what I need, brew!
 
+# get cask versions and fonts also
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
+
 # development tools
 brew install git
-brew install vim --with-lua
+brew install svn
+# Node stuff
+brew install nodenv
+# grab stable version of node
+nodenv install 10.16.3
+# convenience plugin for nodenv
+git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/pluginsnodenv-package-rehash
+nodenv package-hooks install --all
+brew install yarn --ignore-dependencies
+brew install ruby
+brew install m-cli
+brew install grep
+brew install watchman
+brew install bash
 brew install zsh
-# zplugin
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-
-# get cask versions also
-brew tap caskroom/versions
+brew install fish
+brew install exa
+brew install carthage
+brew install ideviceinstaller
+brew install scrcpy
+brew cask install adoptopenjdk8
 
 # apps
 brew cask install alfred
+brew cask install android-studio
 brew cask install appcleaner
-brew cask install dropbox
 brew cask install google-chrome
 brew cask install hammerspoon
 brew cask install istat-menus
 brew cask install iterm2
-brew cask install skype
+brew cask install kap
+brew cask install firefox
+brew cask install visual-studio-code-insiders
+brew cask install slack
+brew cask install realm-studio
+brew cask install the-unarchiver
+brew cask install 1password
+brew cask install telegram
 
-echo ""
-echo "Install Extra Dev Stuff? (y/n)"
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
-    # cli tools
-    brew install ack
-    brew install tree
-    brew install wget
-
-    # development server setup
-    brew install nginx
-
-    # development tools
-    brew install hub
-    brew install reattach-to-user-namespace
-    brew install highlight
-    brew install svn
-
-    # Node stuff
-    brew install nodenv
-    # grab stable version of node
-    nodenv install 8.11.4
-    # convenience plugin for nodenv
-    git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
-    nodenv package-hooks install --all
-    brew install yarn --ignore-dependencies
-
-    brew install ruby
-    brew install m-cli
-    brew install git-flow
-    brew install grep
-    brew install watchman
-    brew install exa
-    brew install fish
-
-    # dev casks
-    brew cask install dash
-    brew cask install duet
-    brew cask install firefox
-    brew cask install visual-studio-code
-    brew cask install slack
-    brew cask install docker
-fi
+# fonts
+brew cask install font-jetbrains-mono
