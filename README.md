@@ -26,9 +26,9 @@ Dotfiles for easily setting up a new Dev machine with:
 2. Run `xcode-select --install` to get extra commandline tools
 3. In terminal
    ```
-   mkdir -p Dev/github.com/stephenlaughton &&
-   cd Dev/github.com/stephenlaughton &&
-   git clone https://github.com/stephenlaughton/dotfiles.git &&
+   mkdir -p Dev/github.com/haggisbreakfast &&
+   cd Dev/github.com/haggisbreakfast &&
+   git clone https://github.com/haggisbreakfast/dotfiles.git &&
    cd dotfiles &&
    ./install.sh
    ```
@@ -47,19 +47,3 @@ Dotfiles for easily setting up a new Dev machine with:
 14. Build `ios` app at least once in Xcode on a **device** and grant codesigning permissions `Allow Always`
 15. Build `android` app at least once in Android Studio to accept terms and download required SDKs
 
-# Primary Node
-
-1. Start jenkins and ngrok TODO: explain
-2. Run Jenkins a few times adding permissions every time it fails (TODO: explain and automate)
-3. Profit
-
-# Secondary Node
-
-1. Setup SSH access from primary node
-2. Add the following Environment Vars in Jenkins -> Nodes -> Configure
-    - `ANDROID_HOME`: `/Users/[username]/Library/Android/sdk`
-    - `JAVA_HOME`: `/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home`
-    - `PATH+LOCAL_BIN`: the output of `echo $PATH` when running `zsh` on node host (mac mini)
-    - `THING`: password for the admin user on host node
-
-### Extra stuff to automate
