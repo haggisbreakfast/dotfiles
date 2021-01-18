@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-	name = Stephen Laughton
-	email = stephenlaughton@gmail.com
+	name = Lindsay Stewart
+	email = lj.stewart00@gmail.com
 [github]
-    user = stephenlaughton
+    user = haggisbreakfast
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
