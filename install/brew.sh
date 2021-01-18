@@ -11,40 +11,45 @@ brew install svn
 # Node stuff
 brew install nodenv
 # grab stable version of node
-nodenv install 10.16.3
+nodenv install 12.16.1
 # convenience plugin for nodenv
 git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/pluginsnodenv-package-rehash
 nodenv package-hooks install --all
-brew install yarn --ignore-dependencies
-brew install ruby
-brew install m-cli
-brew install grep
-brew install watchman
+brew install --cask adoptopenjdk8
 brew install bash
-brew install zsh
-brew install fish
-brew install exa
 brew install carthage
+brew install exa
+brew install fish
+brew install grep
 brew install ideviceinstaller
+brew install m-cli
+brew install ruby
 brew install scrcpy
-brew cask install adoptopenjdk8
+brew install watchman
+brew install zsh
 
 # apps
-brew cask install alfred
-brew cask install android-studio
-brew cask install appcleaner
-brew cask install google-chrome
-brew cask install hammerspoon
-brew cask install istat-menus
-brew cask install iterm2
-brew cask install kap
-brew cask install firefox
-brew cask install visual-studio-code-insiders
-brew cask install slack
-brew cask install realm-studio
-brew cask install the-unarchiver
-brew cask install 1password
-brew cask install telegram
+brew install --cask 1password
+brew install --cask alfred
+brew install --cask android-studio
+brew install --cask appcleaner
+brew install --cask daisydisk
+brew install --cask discord
+brew install --cask figma
+brew install --cask finicky
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask graphiql
+brew install --cask hammerspoon
+brew install --cask handbrake
+brew install --cask istat-menus
+brew install --cask kap
+brew install --cask notion
+brew install --cask responsively
+brew install --cask slack
+brew install --cask telegram
+brew install --cask the-unarchiver
+brew install --cask visual-studio-code-insiders
 
 # fonts
-brew cask install font-jetbrains-mono
+brew install --cask font-jetbrains-mono
